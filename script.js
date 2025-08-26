@@ -6,70 +6,108 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Você se depara com uma oportunidade incrível de conhecer uma nova cultura. Qual destino você deseja visitar?"
-            alternativas: [
+        enunciado: "Você terá a chance de iniciar uma jornada inesquecível, para isso escolha um caminho",
+        alternativas: [
             {
-            texto: "Estados Unidos",
-            afirmacao: "afirmação",
+                texto: "Escolher o hemisfério Sul",
+                afirmacao: "Você se depara com países com clima quente"
             },
-             {
-            texto: "Paris",
-            afirmacao: "afirmação",
-            },
+            {
+                texto: "Escolher o hemisfério Norte",
+                afirmacao: "Você se depara com países com clima frio"
+            }
         ]
     },
-    
-
     {
-        enunciado: "Nesse momento você deseja conhecer mais sobre a cultura, então decide visitar algum monumento histórico. Qual você escolhe?"
-            alternativas: [
+        enunciado: "Após isso você deve escolher seu destino fantástico",
+        alternativas: [
             {
-            texto: "Estátua da Liberdade",
-            afirmacao: "afirmação",
+                texto: "Embarcar em uma viagem para a Àfrica do Sul",
+                afirmacao: "Cidade do Cabo"
             },
-             {
-            texto: "Museu do Louvre",
-            afirmacao: "afirmação",
-            },
+            {
+                texto: "Embarcar em uma viagem para os Estados Unidos",
+                afirmacao: "Nova iorque"
+            }
         ]
     },
-
-
-     {
-        enunciado: "Você irá se comunicar com um estrangeiro. Qual idioma você utiliza?"
-            alternativas: [
+    {
+        enunciado: "Quando você chega ao seu destino percebe que precisa conhecer um pouco mais sobre a cultura local, então decide visitar algum lugar e fazer uma atividade divertida.",
+        alternativas: [
             {
-            texto: "Inglês",
-            afirmacao: "afirmação",
+                texto: "Praça central da cidade",
+                afirmacao: "fazer cardio"
             },
-             {
-            texto: "Francês",
-            afirmacao: "afirmação",
-            },
+            {
+                texto: "Centro movimentado da cidade",
+                afirmacao: "Tirar foto com celebridades"
+            }
         ]
     },
-
-
-     {
-        enunciado: "Você quer visitar um restaurante famoso com pratos típicos da cultura local. Qual você escolhe?"
-            alternativas: [
+    {
+        enunciado: "Enquanto você está se divertindo muito, uma pessoa misteriosa te chama para um cassino e você precisa tomar uma decisão",
+        alternativas: [
             {
-            texto: "Cheesecake",
-            afirmacao: "afirmação",
+                texto: "Não aceitar",
+                afirmacao: "você perdeu a oportunidade"
             },
-             {
-            texto: "Ratatouille",
-            afirmacao: "afirmação",
-            },
+            {
+                texto: "aceitar",
+                afirmacao: "você ganhou um iate"
+            }
         ]
     },
+    {
+        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz? ",
+        alternativas: [
+            {
+                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
+                afirmacao: "afirmação"
+            },
+            {
+                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
+                afirmacao: "afirmação"
+            }
+        ]
+    },
+];
+
 
 let atual = 0;
-let perguntaAtual; 
+let perguntaAtual;
+let historiaFinal = "";
 
-function mostraPergunta () {
-    perguntaAtual = pergunta [atual];
-    caixaPerguntas.textContent = perguntas.enunciado;
+function mostraPergunta() {
+    if (atual >= perguntas.length) {
+        mostraResultado();
+        return;
+    }
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
+    mostraAlternativas();
 }
 
-mostraPergunta ();
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas);
+    }
+}
+
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + " ";
+    atual++;
+    mostraPergunta();
+}
+
+function mostraResultado() {
+    caixaPerguntas.textContent = "Em 2049...";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
+}
+
+mostraPergunta();
