@@ -9,25 +9,25 @@ const perguntas = [
         enunciado: "Você terá a chance de iniciar uma jornada inesquecível, para isso escolha um caminho",
         alternativas: [
             {
-                texto: "Escolher o hemisfério Sul",
+                texto: "Escolhe uma ilha",
                 afirmacao: "Você se depara com países com clima quente"
             },
             {
-                texto: "Escolher o hemisfério Norte",
+                texto: "Escolher uma capital",
                 afirmacao: "Você se depara com países com clima frio"
             }
         ]
     },
     {
-        enunciado: "Após isso você deve escolher seu destino fantástico",
+        enunciado: "Após isso você deve escolher seu destino",
         alternativas: [
             {
-                texto: "Embarcar em uma viagem para a Àfrica do Sul",
-                afirmacao: "Cidade do Cabo"
+                texto: "Embarcar em uma viagem para Maldivas",
+                afirmacao: "Ásia Meridional"
             },
             {
-                texto: "Embarcar em uma viagem para os Estados Unidos",
-                afirmacao: "Nova iorque"
+                texto: "Embarcar em uma viagem para o Amsterdã",
+                afirmacao: "Holanda"
             }
         ]
     },
@@ -35,21 +35,21 @@ const perguntas = [
         enunciado: "Quando você chega ao seu destino percebe que precisa conhecer um pouco mais sobre a cultura local, então decide visitar algum lugar e fazer uma atividade divertida.",
         alternativas: [
             {
-                texto: "Praça central da cidade",
-                afirmacao: "fazer cardio"
+                texto: "Parques aquáticos",
+                afirmacao: "você faliu"
             },
             {
                 texto: "Centro movimentado da cidade",
-                afirmacao: "Tirar foto com celebridades"
+                afirmacao: "você encontrou Chuck Bass"
             }
         ]
     },
     {
-        enunciado: "Enquanto você está se divertindo muito, uma pessoa misteriosa te chama para um cassino e você precisa tomar uma decisão",
+        enunciado: "Enquanto você está se divertindo muito, uma pessoa misteriosa te chama para jogar clash royale apostado e você precisa tomar uma decisão",
         alternativas: [
             {
                 texto: "Não aceitar",
-                afirmacao: "você perdeu a oportunidade"
+                afirmacao: "você perdeu a oportunidade de ganhar um iate"
             },
             {
                 texto: "aceitar",
@@ -61,12 +61,12 @@ const perguntas = [
         enunciado: "Chegou o momento de se despedir dessa aventura! Você poderá levar qualquer coisa para se recordar da viagem, o que você escolhe? ",
         alternativas: [
             {
-                texto: "Ps5",
+                texto: "levar o iate",
                 afirmacao: "não foi possível passar na alfândega"
             },
             {
-                texto: "lembranças para a família",
-                afirmacao: "todos ficaram felizes"
+                texto: "pegar a conta do adversário",
+                afirmacao: "tinha mais de 10 mil troféus e você ficou rico"
             }
         ]
     },
