@@ -39,7 +39,7 @@ const perguntas = [
                 afirmacao: "você faliu"
             },
             {
-                texto: "Centro movimentado da cidade",
+                texto: "Centro movimentado",
                 afirmacao: "você encontrou Chuck Bass"
             }
         ]
